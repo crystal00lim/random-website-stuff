@@ -1,0 +1,62 @@
+.carousel {
+    margin: 0 auto;
+    padding: 20px 0;
+    overflow: hidden;
+    display: flex;
+    > * {
+        flex: 0 0 100%;
+    }
+
+    /* Pauses the Carousel when onhover */
+    &:hover .group {
+        animation-play-state: paused;
+    } 
+}
+
+.group {
+    display: flex;
+    gap: 20px;
+    padding-right: 20px;
+    will-change: transform;
+    animation: scrolling 10s linear infinite;
+}
+
+/* Bypassing the default settings in bootstrap. */
+:root, [data-bs-theme=dark] {
+    --bs-border-radius: none; 
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.card {
+    width: 100%;
+    color: white;
+    border-radius: 50px;
+    padding: 20px;
+    font-size: xx-large;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    --bs-border-radius: 30px; /* Bypassing the default settings in bootstrap. */
+    --bs-body-color: white; /* Bypassing the default settings in bootstrap. */
+
+  /* Colors are all subjected to change!! consider making them var(--color-theme) */
+    &:nth-child(1) {
+      background: rgb(247, 44, 37);
+    }
+
+    &:nth-child(2) {
+      background: rgb(247, 179, 43);
+    }
+
+    &:nth-child(3) {
+      background: rgb(252, 246, 177);
+    }
+}
